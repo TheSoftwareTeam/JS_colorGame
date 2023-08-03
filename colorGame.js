@@ -12,10 +12,8 @@ colors = [
 ];
 
 let eldekiler = [];
-
 const createBoxColor = (sayi) => {
   const getRandomArray = getRandomColor(sayi);
-
   let sayac = 0;
   for (let i = 0; i < sayi; i++) {
     let createDiv = document.createElement("button");
