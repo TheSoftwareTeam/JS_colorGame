@@ -12,22 +12,17 @@ colors = [
 ];
 
 const createBoxColor = (line, column) => {
-    const getRandomArray=getRandomColor(line*column);
-    //console.log(getRandomArray);
+  const getRandomArray = getRandomColor(line * column);
+  //console.log(getRandomArray);
   let sayac = 0;
-  for (let i = 0; i < line; i++) {
-    for (let j = 0; j < column; j++) {
-      let createDiv = document.createElement("div");
-      createDiv.classList = "cardBox";
-  
-      createDiv.style.backgroundColor = colors[getRandomArray[sayac]];
-      createDiv.setAttribute("id",sayac);
-      document.getElementById("gameCard").appendChild(createDiv);
-      sayac++;
-    }
-    
+  for (let i = 0; i < line * column; i++) {
+    let createDiv = document.createElement("div");
+    createDiv.classList = "cardBox";
+    createDiv.style.backgroundColor = colors[getRandomArray[sayac]];
+    createDiv.setAttribute("id", sayac);
+    document.getElementById("gameCard").appendChild(createDiv);
+    sayac++;
   }
-
 };
 
 const getRandomColor = (cardNumber) => {
@@ -41,7 +36,5 @@ const getRandomColor = (cardNumber) => {
   }
   return randomNumber;
 };
-
-
 
 createBoxColor(5, 4);
