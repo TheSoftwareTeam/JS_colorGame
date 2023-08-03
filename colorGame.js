@@ -1,58 +1,47 @@
-colors=["red","blue","yellow","green","purble","black","grey","brown","pink","cadetblue"];
+colors = [
+  "red",
+  "blue",
+  "yellow",
+  "green",
+  "purple",
+  "black",
+  "grey",
+  "brown",
+  "pink",
+  "cadetblue",
+];
 
-const createBoxColor=(line,column)=>{
-   
-    for (let i = 0; i < line; i++) {
-        for (let j = 0; j < column; j++) {
-     
-            let createDiv= document.createElement("div");
-            createDiv.classList="cardBox";
-            createDiv.style.backgroundColor=colors[j];
-            document.getElementById("gameCard").appendChild(createDiv);
-            
-
-
-        }
-        
+const createBoxColor = (line, column) => {
+    const getRandomArray=getRandomColor(line*column);
+    //console.log(getRandomArray);
+  let sayac = 0;
+  for (let i = 0; i < line; i++) {
+    for (let j = 0; j < column; j++) {
+      let createDiv = document.createElement("div");
+      createDiv.classList = "cardBox";
+  
+      createDiv.style.backgroundColor = colors[getRandomArray[sayac]];
+      createDiv.setAttribute("id",sayac);
+      document.getElementById("gameCard").appendChild(createDiv);
+      sayac++;
     }
-
-}
-
-const getRandomColor=(cardNumber)=>{
-    let randomNumber=[];
     
-    for (let i = 1; i <= cardNumber; i++) {
-        
-        randomNumber[i] = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
-        for (let j = 1; j <= cardNumber; j++) {
-            if(randomNumber[j]==randomNumber[i]){
+  }
 
-            }
-            
-        }
-    
-        
-        
+};
+
+const getRandomColor = (cardNumber) => {
+  const randomNumber = [];
+  while (randomNumber.length < cardNumber) {
+    const eldekiSayi = Math.floor(Math.random() * 10);
+    const sayiAdedi = randomNumber.filter((sayi) => sayi === eldekiSayi).length;
+    if (sayiAdedi < 2) {
+      randomNumber.push(eldekiSayi);
     }
-    return randomNumber;
-   
-}
-
-console.log(getRandomColor(20));
+  }
+  return randomNumber;
+};
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-createBoxColor(5,4);
+createBoxColor(5, 4);

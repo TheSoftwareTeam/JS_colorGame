@@ -2,14 +2,14 @@ body{
     display: table-cell;
     text-align: center;
     vertical-align: middle;
-    height: 100vh;
+    height: 90vh;
     width: 100vw;  
 }
 
 #gameCard{
-    border: 1px solid black;
-    height: 50vh;
-    width: 70vw; 
+    border: 0px solid black;
+    height: 60vh;
+    width: 38vw; 
     margin: 0 auto;
    
     display: flex;
@@ -17,8 +17,8 @@ body{
     flex-wrap: wrap;
 }
 .cardBox{
-    width: 19.6%;
-    height: 24.6%;
+    width: 8.6vw;
+    height: 11.6vh;
     background-color: cadetblue;
     border: 1px solid white;
     
